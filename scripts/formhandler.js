@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
   'use strict';
   var App = window.App || {};
   var $ = window.jQuery;
@@ -13,9 +13,9 @@
       throw new Error('Could not find element with selector: ' + selector);
     }
 
-    FormHandler.prototype.addSubmitHandler = function(fn) {
+    FormHandler.prototype.addSubmitHandler = function (fn) {
       console.log('Setting submit handler for form');
-      this.$formElement.on('submit', function(event) {
+      this.$formElement.on('submit', function (event) {
         event.preventDefault();
 
         var data = {
@@ -32,9 +32,9 @@
       });
     };
   }
-  FormHandler.prototype.addInputHandler = function(fn) {
+  FormHandler.prototype.addInputHandler = function (fn) {
     console.log('Setting input handler for form');
-    this.$formElement.on('input', '[name="emailAddress"]', function(event) {
+    this.$formElement.on('input', '[name="emailAddress"]', function (event) {
       var emailAddress = event.target.value;
       if (fn(emailAddress)) {
         event.target.setCustomValidity('');
